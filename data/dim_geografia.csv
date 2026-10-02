@@ -1,0 +1,28 @@
+uf,estado,regiao
+SP,São Paulo,Sudeste
+RJ,Rio de Janeiro,Sudeste
+MG,Minas Gerais,Sudeste
+ES,Espírito Santo,Sudeste
+RS,Rio Grande do Sul,Sul
+PR,Paraná,Sul
+SC,Santa Catarina,Sul
+BA,Bahia,Nordeste
+PE,Pernambuco,Nordeste
+CE,Ceará,Nordeste
+MA,Maranhão,Nordeste
+PB,Paraíba,Nordeste
+RN,Rio Grande do Norte,Nordeste
+AL,Alagoas,Nordeste
+PI,Piauí,Nordeste
+SE,Sergipe,Nordeste
+GO,Goiás,Centro-Oeste
+DF,Distrito Federal,Centro-Oeste
+MT,Mato Grosso,Centro-Oeste
+MS,Mato Grosso do Sul,Centro-Oeste
+PA,Pará,Norte
+AM,Amazonas,Norte
+RO,Rondônia,Norte
+TO,Tocantins,Norte
+AC,Acre,Norte
+AP,Amapá,Norte
+RR,Roraima,Norte

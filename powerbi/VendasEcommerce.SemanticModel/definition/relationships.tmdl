@@ -1,0 +1,16 @@
+relationship be986933-8dc3-580f-a6c0-0e908ec300b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fato_vendas.data_pedido
+	toColumn: dim_calendario.data
+
+relationship 07ae4ec5-a5ec-5e42-9958-b07827b6c5a0
+	fromColumn: fato_vendas.id_produto
+	toColumn: dim_produto.id_produto
+
+relationship 3aea24ff-447a-5041-9497-9d0b94c243b7
+	fromColumn: fato_vendas.id_cliente
+	toColumn: dim_cliente.id_cliente
+
+relationship 0003f31d-9183-5ec4-8bae-9a58ce48016a
+	fromColumn: fato_vendas.uf
+	toColumn: dim_geografia.uf

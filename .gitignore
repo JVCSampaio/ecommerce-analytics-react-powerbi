@@ -1,0 +1,23 @@
+# Node / Vite
+node_modules/
+dist/
+*.local
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+.venv/
+
+# Power BI (arquivos locais do PBIP — não versionar)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix.bak
+**/.pbi/
+
+# SO / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

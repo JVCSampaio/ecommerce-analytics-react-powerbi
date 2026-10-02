@@ -1,0 +1,263 @@
+table fato_vendas
+	lineageTag: 7a295a37-e8b4-5020-b6ab-3cca71118ea8
+
+	measure 'Receita Líquida' = CALCULATE ( SUM ( fato_vendas[receita_liquida] ), fato_vendas[status] = "Entregue" )
+		formatString: \R$ #,0;-\R$ #,0;\R$ #,0
+		displayFolder: Vendas
+		lineageTag: 0099e555-b7cd-50d8-b6f3-fa04ff477063
+
+	measure Custo = CALCULATE ( SUM ( fato_vendas[custo_total] ), fato_vendas[status] = "Entregue" )
+		formatString: \R$ #,0;-\R$ #,0;\R$ #,0
+		displayFolder: Vendas
+		lineageTag: 9e439f7a-bca4-500f-8c93-fa8813635ff7
+
+	measure 'Lucro Bruto' = [Receita Líquida] - [Custo]
+		formatString: \R$ #,0;-\R$ #,0;\R$ #,0
+		displayFolder: Vendas
+		lineageTag: d4862801-977b-5d38-8f71-c44ac7cc0c4c
+
+	measure 'Margem Bruta %' = DIVIDE ( [Lucro Bruto], [Receita Líquida] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Vendas
+		lineageTag: 50b9cb6f-a6af-5cb0-9a5e-2bd43c8f7269
+
+	measure Pedidos = COUNTROWS ( fato_vendas )
+		formatString: #,0
+		displayFolder: Pedidos
+		lineageTag: 01eae85f-5620-50fa-a0a3-3083c1a33937
+
+	measure 'Pedidos Entregues' = CALCULATE ( COUNTROWS ( fato_vendas ), fato_vendas[status] = "Entregue" )
+		formatString: #,0
+		displayFolder: Pedidos
+		lineageTag: 3f71e554-3098-51d3-868b-4a60b6fd5c03
+
+	measure 'Ticket Médio' = DIVIDE ( [Receita Líquida], [Pedidos Entregues] )
+		formatString: \R$ #,0.00;-\R$ #,0.00;\R$ #,0.00
+		displayFolder: Pedidos
+		lineageTag: 70a0dc2a-f63e-571e-a260-1cd8a754c740
+
+	measure 'Itens Vendidos' = CALCULATE ( SUM ( fato_vendas[quantidade] ), fato_vendas[status] = "Entregue" )
+		formatString: #,0
+		displayFolder: Pedidos
+		lineageTag: a371627d-caf4-5ff2-9755-569af0a5e817
+
+	measure 'Clientes Ativos' = CALCULATE ( DISTINCTCOUNT ( fato_vendas[id_cliente] ), fato_vendas[status] = "Entregue" )
+		formatString: #,0
+		displayFolder: Clientes
+		lineageTag: 3adc78c2-6d9b-58ba-b408-79a7cdc7989d
+
+	measure 'Desconto Médio %' =
+			DIVIDE (
+			    CALCULATE ( SUM ( fato_vendas[desconto] ), fato_vendas[status] = "Entregue" ),
+			    CALCULATE ( SUM ( fato_vendas[valor_bruto] ), fato_vendas[status] = "Entregue" )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Vendas
+		lineageTag: 17757886-944e-5394-b1c8-66ec0e552c87
+
+	measure 'Taxa de Cancelamento %' = DIVIDE ( CALCULATE ( COUNTROWS ( fato_vendas ), fato_vendas[status] = "Cancelado" ), [Pedidos] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Operação
+		lineageTag: b7a2fc8d-dbcb-5b0f-9824-d63249d211e2
+
+	measure 'Taxa de Devolução %' = DIVIDE ( CALCULATE ( COUNTROWS ( fato_vendas ), fato_vendas[status] = "Devolvido" ), [Pedidos] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Operação
+		lineageTag: 623d592c-46fa-52c1-b02e-459aa81b82c1
+
+	measure 'Entregas no Prazo %' =
+			DIVIDE (
+			    CALCULATE ( SUM ( fato_vendas[entregue_no_prazo] ), fato_vendas[status] = "Entregue" ),
+			    [Pedidos Entregues]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Operação
+		lineageTag: 44c3d01d-f404-5339-843c-941626836274
+
+	measure 'Prazo Médio (dias)' = CALCULATE ( AVERAGE ( fato_vendas[prazo_entrega_dias] ), fato_vendas[status] = "Entregue" )
+		formatString: 0.0
+		displayFolder: Operação
+		lineageTag: 413b7ce7-d7ab-5328-a24d-ddbb03a7b1ca
+
+	measure 'Receita Ano Anterior' = CALCULATE ( [Receita Líquida], SAMEPERIODLASTYEAR ( dim_calendario[data] ) )
+		formatString: \R$ #,0;-\R$ #,0;\R$ #,0
+		displayFolder: Tempo
+		lineageTag: df261bde-baff-5b03-ab9f-e7d65adb0a5f
+
+	measure 'Crescimento YoY %' =
+			VAR _anterior = [Receita Ano Anterior]
+			RETURN
+			    IF ( NOT ISBLANK ( _anterior ), DIVIDE ( [Receita Líquida] - _anterior, _anterior ) )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Tempo
+		lineageTag: b6a48a12-675e-537d-ac2b-227c3f6c9294
+
+	measure 'Receita Acumulada no Ano' = TOTALYTD ( [Receita Líquida], dim_calendario[data] )
+		formatString: \R$ #,0;-\R$ #,0;\R$ #,0
+		displayFolder: Tempo
+		lineageTag: 21fdce54-dbf7-504a-8179-e53709518ac1
+
+	column id_pedido
+		dataType: int64
+		formatString: 0
+		lineageTag: 95c91f22-361a-5f1c-a084-912370283f3e
+		summarizeBy: none
+		sourceColumn: id_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_pedido
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy
+		lineageTag: acecef98-bbc9-5e48-86e0-dc85e89eebb4
+		summarizeBy: none
+		sourceColumn: data_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_cliente
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4847c7ca-8d8d-5eee-9e60-651e8388eaac
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_produto
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4834c04c-1160-5b4f-beae-7f6d1942b85a
+		summarizeBy: none
+		sourceColumn: id_produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		dataType: string
+		isHidden
+		lineageTag: dd0b742d-1922-54db-92f4-7062cbd41834
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column canal
+		dataType: string
+		lineageTag: 600cb991-a2ae-5c11-af7b-0c1fde807e24
+		summarizeBy: none
+		sourceColumn: canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column forma_pagamento
+		dataType: string
+		lineageTag: eac81808-c6e8-5fc0-be06-5cd077492eaf
+		summarizeBy: none
+		sourceColumn: forma_pagamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 253d6d69-e39e-5b73-8cf6-cfad852cc9ec
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantidade
+		dataType: int64
+		formatString: #,0
+		lineageTag: f489212e-b57b-59a2-b591-67c68feb333a
+		summarizeBy: sum
+		sourceColumn: quantidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column preco_unitario
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: aa60957e-ab58-5972-8a65-06d10e7cb972
+		summarizeBy: none
+		sourceColumn: preco_unitario
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor_bruto
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: 30a45f68-f765-5da7-bff1-9140a3dc158c
+		summarizeBy: sum
+		sourceColumn: valor_bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column desconto
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: fff7b9c8-69b1-5171-8b0c-0bd4b5df0f37
+		summarizeBy: sum
+		sourceColumn: desconto
+
+		annotation SummarizationSetBy = Automatic
+
+	column receita_liquida
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: 2bc48c93-b6bd-5edc-900a-db29735b9fa5
+		summarizeBy: sum
+		sourceColumn: receita_liquida
+
+		annotation SummarizationSetBy = Automatic
+
+	column custo_total
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: 74d59dd2-5bd3-5602-b83c-619e74f8b77e
+		summarizeBy: sum
+		sourceColumn: custo_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor_frete
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: 114b0d78-60ff-5797-9c08-88f9eab4704f
+		summarizeBy: sum
+		sourceColumn: valor_frete
+
+		annotation SummarizationSetBy = Automatic
+
+	column prazo_entrega_dias
+		dataType: int64
+		formatString: 0
+		lineageTag: 74ab2933-36e6-5707-9790-d3211184381f
+		summarizeBy: none
+		sourceColumn: prazo_entrega_dias
+
+		annotation SummarizationSetBy = Automatic
+
+	column entregue_no_prazo
+		dataType: int64
+		formatString: 0
+		lineageTag: 22832ccb-247e-53d8-b624-4b3a9067ca77
+		summarizeBy: none
+		sourceColumn: entregue_no_prazo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fato_vendas = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents(UrlBaseDados, [RelativePath = "fato_vendas.csv"]), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"id_pedido", Int64.Type}, {"data_pedido", type date}, {"id_cliente", Int64.Type}, {"id_produto", Int64.Type}, {"uf", type text}, {"canal", type text}, {"forma_pagamento", type text}, {"status", type text}, {"quantidade", Int64.Type}, {"preco_unitario", type number}, {"valor_bruto", type number}, {"desconto", type number}, {"receita_liquida", type number}, {"custo_total", type number}, {"valor_frete", type number}, {"prazo_entrega_dias", Int64.Type}, {"entregue_no_prazo", Int64.Type}}, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,50 @@
+table dim_cliente
+	lineageTag: 01e97c78-600b-5ab5-af7d-8ba5464c3bfc
+
+	column id_cliente
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f869a8a3-70b3-50db-9684-3089ef2c490e
+		summarizeBy: none
+		sourceColumn: id_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		dataType: string
+		lineageTag: 23e79260-0c80-549a-ab5d-efccdf159e59
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column faixa_etaria
+		dataType: string
+		lineageTag: 1770016b-c853-5d6c-9451-21b6d7399eef
+		summarizeBy: none
+		sourceColumn: faixa_etaria
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_cadastro
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 1070a2c7-d11f-5ecd-9d78-4d082b7d20d9
+		summarizeBy: none
+		sourceColumn: data_cadastro
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_cliente = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents(UrlBaseDados, [RelativePath = "dim_cliente.csv"]), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"id_cliente", Int64.Type}, {"uf", type text}, {"faixa_etaria", type text}, {"data_cadastro", type date}}, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table

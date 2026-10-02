@@ -1,0 +1,40 @@
+table dim_geografia
+	lineageTag: bd8591ce-4ffa-5df4-8cb1-8fc41879df68
+
+	column uf
+		dataType: string
+		lineageTag: 7137d4e7-cd13-5c66-9a2a-d1236e5a6c80
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: 929a0af3-e033-5918-8512-e3f396bcafe2
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column regiao
+		dataType: string
+		lineageTag: f4b0f641-3f3f-5b5e-9f03-24e54b66499d
+		summarizeBy: none
+		sourceColumn: regiao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_geografia = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents(UrlBaseDados, [RelativePath = "dim_geografia.csv"]), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"uf", type text}, {"estado", type text}, {"regiao", type text}}, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table

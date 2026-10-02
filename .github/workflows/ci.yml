@@ -1,0 +1,30 @@
+name: Validate analytics
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python scripts/validar_dados.py
+      - run: npm ci
+        working-directory: web
+      - run: npm run lint && npm test && npm run build
+        working-directory: web
+      - name: Check committed site matches source
+        run: git diff --exit-code -- docs

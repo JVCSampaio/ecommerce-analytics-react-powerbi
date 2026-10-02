@@ -1,0 +1,58 @@
+table dim_produto
+	lineageTag: 144e676a-0461-5854-930c-61979f8dbdb5
+
+	column id_produto
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: dfe94b75-534d-5c6b-b1f2-6bf27b783068
+		summarizeBy: none
+		sourceColumn: id_produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column produto
+		dataType: string
+		lineageTag: a8b84c3f-d33c-5573-a1bc-064e9dacdd3b
+		summarizeBy: none
+		sourceColumn: produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: 167fe8ba-a2b6-59ef-8d70-ac8774f9b119
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column preco_lista
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: 26eb3329-6480-51bc-b1c5-9669b9b144a8
+		summarizeBy: none
+		sourceColumn: preco_lista
+
+		annotation SummarizationSetBy = Automatic
+
+	column custo_unitario
+		dataType: double
+		formatString: \R$ #,0.00
+		lineageTag: 0d0189fc-550d-5081-a3d6-60ee51f1a4e8
+		summarizeBy: none
+		sourceColumn: custo_unitario
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_produto = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents(UrlBaseDados, [RelativePath = "dim_produto.csv"]), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars = true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {{"id_produto", Int64.Type}, {"produto", type text}, {"categoria", type text}, {"preco_lista", type number}, {"custo_unitario", type number}}, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,56 @@
+id_produto,produto,categoria,preco_lista,custo_unitario
+1,Fone Bluetooth com Cancelamento de Ruído,Eletrônicos,449.9,356.71
+2,Smartwatch Fitness,Eletrônicos,699.0,526.11
+3,Caixa de Som Portátil,Eletrônicos,299.9,240.83
+4,Teclado Mecânico RGB,Eletrônicos,389.9,305.56
+5,Mouse Sem Fio Ergonômico,Eletrônicos,149.9,106.62
+6,"Monitor 27"" IPS",Eletrônicos,1399.0,1143.09
+7,"Tablet 10"" 128GB",Eletrônicos,1899.0,1502.75
+8,"Notebook 15"" i5 16GB",Eletrônicos,3799.0,3017.65
+9,Carregador Turbo 65W,Eletrônicos,129.9,92.93
+10,Air Fryer 5L,Casa & Cozinha,429.9,246.78
+11,Cafeteira Expresso,Casa & Cozinha,799.0,451.03
+12,Jogo de Panelas Antiaderente,Casa & Cozinha,349.9,220.86
+13,Liquidificador 1200W,Casa & Cozinha,229.9,137.31
+14,Aspirador Robô,Casa & Cozinha,1299.0,803.73
+15,Jogo de Cama Queen 300 fios,Casa & Cozinha,259.9,148.98
+16,Kit Potes Herméticos,Casa & Cozinha,89.9,49.2
+17,Luminária de Mesa LED,Casa & Cozinha,119.9,70.33
+18,Tênis Casual Unissex,Moda,279.9,114.1
+19,Jaqueta Corta-Vento,Moda,229.9,114.79
+20,Calça Jeans Slim,Moda,179.9,85.6
+21,Camiseta Básica Algodão,Moda,59.9,29.41
+22,Mochila Urbana,Moda,199.9,88.46
+23,Relógio Analógico,Moda,249.9,129.07
+24,Óculos de Sol,Moda,159.9,81.1
+25,Vestido Midi,Moda,189.9,93.7
+26,Kit Skincare Facial,Beleza,189.9,76.6
+27,Protetor Solar FPS 50,Beleza,69.9,30.48
+28,Perfume Amadeirado 100ml,Beleza,249.9,96.28
+29,Secador de Cabelo 2000W,Beleza,219.9,87.63
+30,Prancha Alisadora,Beleza,179.9,83.11
+31,Sérum Vitamina C,Beleza,99.9,46.89
+32,Kit Maquiagem Básico,Beleza,129.9,64.44
+33,Barbeador Elétrico,Beleza,199.9,83.78
+34,Bicicleta Aro 29,Esporte & Lazer,1499.0,885.54
+35,Esteira Dobrável,Esporte & Lazer,2199.0,1323.03
+36,Kit Halteres 20kg,Esporte & Lazer,329.9,188.32
+37,Tapete de Yoga,Esporte & Lazer,99.9,56.37
+38,Garrafa Térmica 1L,Esporte & Lazer,89.9,54.15
+39,Barraca Camping 4 Pessoas,Esporte & Lazer,459.9,264.42
+40,Bola de Futebol Oficial,Esporte & Lazer,149.9,93.49
+41,Patinete Elétrico,Esporte & Lazer,2499.0,1494.62
+42,Livro — Análise de Dados com Python,Livros,119.9,81.52
+43,Livro — Storytelling com Dados,Livros,89.9,59.7
+44,Livro — Romance Contemporâneo,Livros,54.9,33.9
+45,Livro — Fantasia Épica (Box 3 vol.),Livros,149.9,101.91
+46,Livro — Finanças Pessoais,Livros,49.9,33.76
+47,Livro — Biografia,Livros,69.9,43.79
+48,Livro — Culinária Brasileira,Livros,99.9,61.4
+49,Blocos de Montar 500 peças,Brinquedos,249.9,140.42
+50,Boneca Articulada,Brinquedos,129.9,64.53
+51,Carrinho de Controle Remoto,Brinquedos,199.9,100.75
+52,Jogo de Tabuleiro Estratégia,Brinquedos,179.9,86.51
+53,Quebra-Cabeça 1000 peças,Brinquedos,79.9,45.9
+54,Pelúcia Grande,Brinquedos,99.9,55.92
+55,Kit Ciência para Crianças,Brinquedos,149.9,84.64

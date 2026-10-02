@@ -1,0 +1,210 @@
+{
+  "config": "{\"version\": \"5.43\", \"themeCollection\": {}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"exportDataMode\": 1}}",
+  "layoutOptimization": 0,
+  "sections": [
+    {
+      "name": "VisaoGeral0000000001",
+      "displayName": "Visão Geral",
+      "displayOption": 1,
+      "ordinal": 0,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 24,
+          "y": 16,
+          "z": 0,
+          "width": 200,
+          "height": 64,
+          "config": "{\"name\": \"slAno\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 16, \"z\": 0, \"width\": 200, \"height\": 64}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.ano\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_calendario\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"ano\"}, \"Name\": \"dim_calendario.ano\", \"NativeReferenceName\": \"ano\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Ano'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 236,
+          "y": 16,
+          "z": 0,
+          "width": 200,
+          "height": 64,
+          "config": "{\"name\": \"slRegiao\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 236, \"y\": 16, \"z\": 0, \"width\": 200, \"height\": 64}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_geografia.regiao\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"g\", \"Entity\": \"dim_geografia\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"g\"}}, \"Property\": \"regiao\"}, \"Name\": \"dim_geografia.regiao\", \"NativeReferenceName\": \"regiao\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Região'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 448,
+          "y": 16,
+          "z": 0,
+          "width": 200,
+          "height": 64,
+          "config": "{\"name\": \"slCanal\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 448, \"y\": 16, \"z\": 0, \"width\": 200, \"height\": 64}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.canal\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"canal\"}, \"Name\": \"fato_vendas.canal\", \"NativeReferenceName\": \"canal\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Canal'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdReceita\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Receita Líquida\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 336,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdPedidos\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 336, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Pedidos Entregues\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Pedidos Entregues\"}, \"Name\": \"fato_vendas.Pedidos Entregues\", \"NativeReferenceName\": \"Pedidos Entregues\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdTicket\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Ticket Médio\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Ticket Médio\"}, \"Name\": \"fato_vendas.Ticket Médio\", \"NativeReferenceName\": \"Ticket Médio\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 960,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdMargem\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Margem Bruta %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Margem Bruta %\"}, \"Name\": \"fato_vendas.Margem Bruta %\", \"NativeReferenceName\": \"Margem Bruta %\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24,
+          "y": 224,
+          "z": 0,
+          "width": 816,
+          "height": 232,
+          "config": "{\"name\": \"lnReceitaMes\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 224, \"z\": 0, \"width\": 816, \"height\": 232}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_calendario.mes_ano\", \"active\": true}], \"Y\": [{\"queryRef\": \"fato_vendas.Receita Líquida\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_calendario\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"mes_ano\"}, \"Name\": \"dim_calendario.mes_ano\", \"NativeReferenceName\": \"mes_ano\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"mes_ano\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Receita líquida por mês'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 856,
+          "y": 224,
+          "z": 0,
+          "width": 400,
+          "height": 232,
+          "config": "{\"name\": \"dnCanal\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 856, \"y\": 224, \"z\": 0, \"width\": 400, \"height\": 232}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fato_vendas.canal\", \"active\": true}], \"Y\": [{\"queryRef\": \"fato_vendas.Receita Líquida\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"canal\"}, \"Name\": \"fato_vendas.canal\", \"NativeReferenceName\": \"canal\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Receita por canal'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24,
+          "y": 472,
+          "z": 0,
+          "width": 616,
+          "height": 232,
+          "config": "{\"name\": \"brCategoria\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 472, \"z\": 0, \"width\": 616, \"height\": 232}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_produto.categoria\", \"active\": true}], \"Y\": [{\"queryRef\": \"fato_vendas.Receita Líquida\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"dim_produto\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"categoria\"}, \"Name\": \"dim_produto.categoria\", \"NativeReferenceName\": \"categoria\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Receita por categoria'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 656,
+          "y": 472,
+          "z": 0,
+          "width": 600,
+          "height": 232,
+          "config": "{\"name\": \"brUF\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 656, \"y\": 472, \"z\": 0, \"width\": 600, \"height\": 232}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_geografia.uf\", \"active\": true}], \"Y\": [{\"queryRef\": \"fato_vendas.Receita Líquida\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"g\", \"Entity\": \"dim_geografia\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"g\"}}, \"Property\": \"uf\"}, \"Name\": \"dim_geografia.uf\", \"NativeReferenceName\": \"uf\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Receita por UF'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ProdutosLogistica0002",
+      "displayName": "Produtos & Logística",
+      "displayOption": 1,
+      "ordinal": 1,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 24,
+          "y": 16,
+          "z": 0,
+          "width": 200,
+          "height": 64,
+          "config": "{\"name\": \"slAno2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 16, \"z\": 0, \"width\": 200, \"height\": 64}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.ano\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_calendario\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"ano\"}, \"Name\": \"dim_calendario.ano\", \"NativeReferenceName\": \"ano\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Ano'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 236,
+          "y": 16,
+          "z": 0,
+          "width": 200,
+          "height": 64,
+          "config": "{\"name\": \"slCategoria2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 236, \"y\": 16, \"z\": 0, \"width\": 200, \"height\": 64}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_produto.categoria\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"dim_produto\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"categoria\"}, \"Name\": \"dim_produto.categoria\", \"NativeReferenceName\": \"categoria\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Categoria'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdPrazo\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Entregas no Prazo %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Entregas no Prazo %\"}, \"Name\": \"fato_vendas.Entregas no Prazo %\", \"NativeReferenceName\": \"Entregas no Prazo %\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 336,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdPrazoMedio\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 336, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Prazo Médio (dias)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Prazo Médio (dias)\"}, \"Name\": \"fato_vendas.Prazo Médio (dias)\", \"NativeReferenceName\": \"Prazo Médio (dias)\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdCancel\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Taxa de Cancelamento %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Taxa de Cancelamento %\"}, \"Name\": \"fato_vendas.Taxa de Cancelamento %\", \"NativeReferenceName\": \"Taxa de Cancelamento %\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 960,
+          "y": 96,
+          "z": 0,
+          "width": 296,
+          "height": 112,
+          "config": "{\"name\": \"cdDevol\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 96, \"z\": 0, \"width\": 296, \"height\": 112}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fato_vendas.Taxa de Devolução %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Taxa de Devolução %\"}, \"Name\": \"fato_vendas.Taxa de Devolução %\", \"NativeReferenceName\": \"Taxa de Devolução %\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24,
+          "y": 224,
+          "z": 0,
+          "width": 760,
+          "height": 480,
+          "config": "{\"name\": \"tbProdutos\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 224, \"z\": 0, \"width\": 760, \"height\": 480}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_produto.produto\", \"active\": true}, {\"queryRef\": \"dim_produto.categoria\", \"active\": true}, {\"queryRef\": \"fato_vendas.Itens Vendidos\"}, {\"queryRef\": \"fato_vendas.Receita Líquida\"}, {\"queryRef\": \"fato_vendas.Margem Bruta %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"dim_produto\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"produto\"}, \"Name\": \"dim_produto.produto\", \"NativeReferenceName\": \"produto\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"categoria\"}, \"Name\": \"dim_produto.categoria\", \"NativeReferenceName\": \"categoria\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Itens Vendidos\"}, \"Name\": \"fato_vendas.Itens Vendidos\", \"NativeReferenceName\": \"Itens Vendidos\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Margem Bruta %\"}, \"Name\": \"fato_vendas.Margem Bruta %\", \"NativeReferenceName\": \"Margem Bruta %\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Ranking de produtos'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 800,
+          "y": 224,
+          "z": 0,
+          "width": 456,
+          "height": 232,
+          "config": "{\"name\": \"brPrazoRegiao\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 800, \"y\": 224, \"z\": 0, \"width\": 456, \"height\": 232}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_geografia.regiao\", \"active\": true}], \"Y\": [{\"queryRef\": \"fato_vendas.Entregas no Prazo %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"g\", \"Entity\": \"dim_geografia\", \"Type\": 0}, {\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"g\"}}, \"Property\": \"regiao\"}, \"Name\": \"dim_geografia.regiao\", \"NativeReferenceName\": \"regiao\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Entregas no Prazo %\"}, \"Name\": \"fato_vendas.Entregas no Prazo %\", \"NativeReferenceName\": \"Entregas no Prazo %\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Entregas no Prazo %\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Entregas no prazo por região'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 800,
+          "y": 472,
+          "z": 0,
+          "width": 456,
+          "height": 232,
+          "config": "{\"name\": \"dnPagamento\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 800, \"y\": 472, \"z\": 0, \"width\": 456, \"height\": 232}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fato_vendas.forma_pagamento\", \"active\": true}], \"Y\": [{\"queryRef\": \"fato_vendas.Receita Líquida\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"fato_vendas\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"forma_pagamento\"}, \"Name\": \"fato_vendas.forma_pagamento\", \"NativeReferenceName\": \"forma_pagamento\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"Receita Líquida\"}, \"Name\": \"fato_vendas.Receita Líquida\", \"NativeReferenceName\": \"Receita Líquida\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Receita por forma de pagamento'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}

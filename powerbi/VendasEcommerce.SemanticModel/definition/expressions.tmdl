@@ -1,0 +1,4 @@
+expression UrlBaseDados = "https://raw.githubusercontent.com/JVCSampaio/ecommerce-analytics-react-powerbi/main/data/" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 92ee4703-88e4-5d35-8c62-a239c338c67a
+
+	annotation PBI_ResultType = Text
